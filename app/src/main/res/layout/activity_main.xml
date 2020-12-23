@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:text="BRAIN GAME"
+        android:textAllCaps="false"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/goButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="start"
+        android:paddingLeft="30dp"
+        android:paddingTop="40dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="40dp"
+        android:text="GO!"
+        android:textColor="#201F1F"
+        android:textSize="80sp"
+        android:visibility="invisible"
+        app:backgroundTint="#4CAF50"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/newConstraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/scoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="#F8E224"
+            android:padding="10dp"
+            android:text="0/0"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/playAgainButton"
+            android:layout_width="181dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="26dp"
+            android:onClick="playAgain"
+            android:text="Play Again !"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#A6A5A5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultTextView" />
+
+        <TextView
+            android:id="@+id/timerTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:background="#FFC107"
+            android:padding="10dp"
+            android:text="30s"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="67dp"
+            android:layout_marginTop="28dp"
+            android:text="Correct!"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/gridLayout" />
+
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="193dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="37dp"
+            android:paddingLeft="30dp"
+            android:text="2+2"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+            app:layout_constraintEnd_toStartOf="@+id/scoreTextView"
+            app:layout_constraintStart_toEndOf="@+id/timerTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="410dp"
+            android:layout_height="370dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginRight="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/resultTextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scoreTextView">
+
+            <Button
+                android:id="@+id/selectButton0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:onClick="choose"
+                android:tag="0"
+                android:text="14"
+                android:textColor="#121111"
+                android:textSize="80sp"
+                app:backgroundTint="#009688" />
+
+            <Button
+                android:id="@+id/selectButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="0"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:onClick="choose"
+                android:tag="1"
+                android:text="14"
+                android:textColor="#000"
+                android:textSize="80sp"
+                app:backgroundTint="#9C27B0" />
+
+            <Button
+                android:id="@+id/selectButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="0"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:onClick="choose"
+                android:tag="2"
+                android:text="14"
+                android:textColor="#000"
+                android:textSize="80sp"
+                app:backgroundTint="#00BCD4" />
+
+            <Button
+                android:id="@+id/selectButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_row="1"
+                android:layout_rowWeight="1"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="fill"
+                android:onClick="choose"
+                android:tag="3"
+                android:text="14"
+                android:textColor="#000"
+                android:textSize="80sp"
+                app:backgroundTint="#DD1414" />
+        </GridLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
